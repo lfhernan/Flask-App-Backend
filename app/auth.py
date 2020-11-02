@@ -11,6 +11,7 @@ API_AUDIENCE = 'https://flask.api'
 ALGORITHMS = ["RS256"]
 
 # Error handler
+
 class AuthError(Exception):
     def __init__(self, error, status_code):
         self.error = error
@@ -36,6 +37,8 @@ def get_token_auth_header():
                          "Authorization header is expected"}, 401)
 
     parts = auth.split()
+
+    print(parts[0])
 
     if parts[0].lower() != "bearer":
         raise AuthError({"code": "invalid_header",
