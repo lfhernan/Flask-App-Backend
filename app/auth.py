@@ -38,8 +38,6 @@ def get_token_auth_header():
 
     parts = auth.split()
 
-    print(parts[0])
-
     if parts[0].lower() != "bearer":
         raise AuthError({"code": "invalid_header",
                          "description":
