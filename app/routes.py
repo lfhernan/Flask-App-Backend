@@ -8,3 +8,9 @@ from app.auth import requires_auth, requires_scope
 @requires_auth
 def get_video(path):
     return send_from_directory('../assets', path)
+
+@app.route('/api/livestream')
+@cross_origin(headers=["Content-Type", "Authorization"])
+@requires_auth
+def get_livestream():
+	return 'Success!'
